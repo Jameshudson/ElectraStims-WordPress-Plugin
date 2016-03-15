@@ -23,9 +23,8 @@ $menuTest->setIcon("");
 $menuTest->setPosition(6);
 
 //loading plugins
-new \modules\page_resrict\PageResrict();
 new \modules\email_tax_statmant\EmailTaxStatment();
-new \modules\rma\RMA();
+//new \modules\rma\RMA();
 new \modules\payment_tracker\PaymentTracker($menuTest);
 new \modules\product_list\ProductsList($menuTest);
 new \modules\user_register\UserRegister();

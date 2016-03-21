@@ -2,7 +2,7 @@
 /*
 Plugin Name:Do Not Deactivate
 Plugin URI: https://www.electrastim.com
-Version: 1.5
+Version: 1.7
 Author: James Hudson
 */
 

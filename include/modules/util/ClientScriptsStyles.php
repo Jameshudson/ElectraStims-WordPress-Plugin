@@ -19,6 +19,8 @@ class ClientScriptsStyles{
     private $scripts = array();
     private $adminScripts = array();
 
+    private $toBeRemoved = array();
+
     public function __construct(){
 
         add_action("wp_enqueue_scripts", array($this, "wp_register_style"));
@@ -84,6 +86,11 @@ class ClientScriptsStyles{
             wp_register_script( $key, $value, NULL, NULL, true );
             wp_enqueue_script($key);
         }
+
+        //removing Styles
+        foreach($this->toBeRemoved as $key){
+            wp_deregister_style($key);
+        }
     }
 
     public function addMobileStyle($name, $loc, $dep= array()){
@@ -108,5 +115,9 @@ class ClientScriptsStyles{
 
     public function addAdminScript($name, $loc){
         $this->addScript[$name] = $loc;
+    }
+
+    public function removeStyle($name){
+        $this->toBeRemoved[] = $name;
     }
 }

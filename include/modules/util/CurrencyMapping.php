@@ -14,7 +14,7 @@ class CurrencyMapping{
     const AUD_COUNTRIES = "AUD_COUNTRIES";
     const CAD_COUNTRIES = "CAD_COUNTRIES";
 
-    const USDCountry = array("US", "AO", "BF", "BI", "BJ", "BW", "CD", "CF", "CG", "CI", "CM", "CV", "DJ", "DZ"
+    private $USDCountry = array("US", "AO", "BF", "BI", "BJ", "BW", "CD", "CF", "CG", "CI", "CM", "CV", "DJ", "DZ"
     , "EG", "EH", "ER", "ET", "GA", "GH", "GM", "GN",
         "GQ", "GW", "YT", "KE", "KM", "LY", "LR", "LS", "MA",
         "MG", "ML", "MR", "MU", "MW", "MZ", "NA", "NE", "NG",
@@ -33,41 +33,41 @@ class CurrencyMapping{
         "AR", "BO", "BR", "CL", "CO", "EC", "FK", "GF", "GY",
         "GY", "PE", "PY", "SR", "UY", "VE", "RS", "RU", "NO");
 
-    const EUROCountry = array("AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI",
+    private $EUROCountry = array("AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI",
         "FR", "DE", "EL", "HU", "IE", "IT", "LV", "LT", "LU", "MT", "NL", "PL",
         "PT", "RO", "SK", "SI", "ES", "SE");
 
-    const GBPCountry = array("GB", "");
+    private $GBPCountry = array("GB", "GB");
 
-    const AUDCountry = array("AU", "");
+    private $AUDCountry = array("AU", "AU");
 
-    const CADCountry = array("CA", "");
+    private $CADCountry = array("CA", "CA");
 
     public function __construct(){
 
         if (!get_option($this::USD_COUNTRIES)) {
 
-            add_option($this::USD_COUNTRIES, $this::USDCountry);
+            add_option($this::USD_COUNTRIES, $this->USDCountry);
         }
 
         if (!get_option($this::EURO_COUNTRIES)) {
 
-            add_option($this::EURO_COUNTRIES, $this::EUROCountry);
+            add_option($this::EURO_COUNTRIES, $this->EUROCountry);
         }
 
         if (!get_option($this::GBP_COUNTRIES)) {
 
-            add_option($this::GBP_COUNTRIES, $this::GBPCountry);
+            add_option($this::GBP_COUNTRIES, $this->GBPCountry);
         }
 
         if (!get_option($this::AUD_COUNTRIES)) {
 
-            add_option($this::AUD_COUNTRIES, $this::AUDCountry);
+            add_option($this::AUD_COUNTRIES, $this->AUDCountry);
         }
 
         if (!get_option($this::CAD_COUNTRIES)) {
 
-            add_option($this::CAD_COUNTRIES, $this::CADCountry);
+            add_option($this::CAD_COUNTRIES, $this->CADCountry);
         }
     }
 

@@ -2,7 +2,7 @@
 /*
 Plugin Name:Do Not Deactivate
 Plugin URI: https://www.electrastim.com
-Version: 1.7
+Version: 1.8
 Author: James Hudson
 */
 
@@ -13,20 +13,20 @@ require_once ("vendor/autoload.php");
 use modules\library\wrappers\menu\AdminMenu as AdminMenu;
 
 //adding admin menu item.
-$menuTest = new AdminMenu();
+//$menuTest = new AdminMenu();
 
-$menuTest->setTitle("ElectraStim");
-$menuTest->setMenuTitle("ElectraStim");
-$menuTest->setCapability("manage_options");
-$menuTest->setMenuSlug("electrastim");
-$menuTest->setIcon("");
-$menuTest->setPosition(6);
+//$menuTest->setTitle("ElectraStim");
+//$menuTest->setMenuTitle("ElectraStim");
+//$menuTest->setCapability("manage_options");
+//$menuTest->setMenuSlug("electrastim");
+//$menuTest->setIcon("");
+//$menuTest->setPosition(6);
 
 //loading plugins
 new \modules\email_tax_statmant\EmailTaxStatment();
 //new \modules\rma\RMA();
-new \modules\payment_tracker\PaymentTracker($menuTest);
-new \modules\product_list\ProductsList($menuTest);
+//new \modules\payment_tracker\PaymentTracker($menuTest);
+//new \modules\product_list\ProductsList($menuTest);
 new \modules\user_register\UserRegister();
 
 new \modules\util\ClientScriptsStyles();

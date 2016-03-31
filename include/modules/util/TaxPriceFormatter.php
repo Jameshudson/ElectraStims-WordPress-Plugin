@@ -10,7 +10,7 @@ class TaxPriceFormatter{
 
     	$cMap = new CurrencyMapping();
 
-	    if(in_array($county, $cMap->getUSDCountries()) || in_array($county, $cMap->getUSDCountries())){
+	    if(in_array($county, $cMap->getEUROCountries()) || in_array($county, $cMap->getGBPCountries())){
 
 	        return true;
 	    }
@@ -25,7 +25,6 @@ class TaxPriceFormatter{
 	    $currenyMapping = new CurrencyMapping();
 
 	    if(in_array($county, $currenyMapping->getGBPCountries()) !== false){//UK
-
 	        $total = wc_price($price, array('currency' => 'GBP'));
 	    }else if(in_array($county, $currenyMapping->getEUROCountries()) !== false){//EURO
 

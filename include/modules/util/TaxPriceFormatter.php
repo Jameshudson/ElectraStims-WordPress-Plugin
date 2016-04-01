@@ -18,7 +18,7 @@ class TaxPriceFormatter{
     	return false;
 	}
 
-	public function formatPrice($price, $county, $tax=false){
+	public function formatPrice($price, $county){
 
 	    $total = "";
 
@@ -31,33 +31,15 @@ class TaxPriceFormatter{
 	        $total = wc_price($price, array('currency' => 'EUR'));
 	    }else if(in_array($county, $currenyMapping->getUSDCountries()) !== false){//US Doller
 
-	        if($tax == true){
-
-	            $total = wc_price("00.00", array('currency' => 'USD'));
-	        }else{
-
-	            $total = wc_price($price, array('currency' => 'USD'));
-	        }
+			$total = wc_price($price, array('currency' => 'USD'));
 
 	    }else if(in_array($county, $currenyMapping->getAUDCountries())){// AU Doller
 
-	        if($tax == true){
+			$total = wc_price($price, array('currency' => 'AUD'));
 
-	            $total = wc_price("00.00", array('currency' => 'AUD'));
-	        }else {
-
-	            $total = wc_price($price, array('currency' => 'AUD'));
-	        }
 	    }else if(in_array($county, $currenyMapping->getCADCountries())){// CA Doller
 
-	        if($tax == true){
-
-	            $total = wc_price("00.00", array('currency' => 'CAD'));
-	        }else{
-
 	            $total = wc_price($price, array('currency' => 'CAD'));
-	        }
-
 	    }
 
 	    return $total;

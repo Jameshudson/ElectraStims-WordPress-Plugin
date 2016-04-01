@@ -31,7 +31,7 @@ class CurrencyMapping{
         "HT", "JM", "KY", "KN", "LC", "MF", "MQ", "MS", "NI",
         "PA", "PM", "PR", "SV", "TC", "TT", "VC", "VG", "VI",
         "AR", "BO", "BR", "CL", "CO", "EC", "FK", "GF", "GY",
-        "GY", "PE", "PY", "SR", "UY", "VE", "RS", "RU", "NO", "CH");
+        "GY", "PE", "PY", "SR", "UY", "VE", "RS", "RU", "NO");
 
     private $EUROCountry = array("AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI",
         "FR", "DE", "EL", "HU", "IE", "IT", "LV", "LT", "LU", "MT", "NL", "PL",
@@ -73,8 +73,7 @@ class CurrencyMapping{
 
     //getters and setters
     public function getUSDCountries(){
-//        return get_option($this::USD_COUNTRIES);
-        return $this->USDCountry;
+        return get_option($this::USD_COUNTRIES);
     }
 
     public function setUSDCountries($countries=array()){
@@ -82,18 +81,15 @@ class CurrencyMapping{
     }
 
     public function getEUROCountries(){
-//        return get_option($this::EURO_COUNTRIES);
-        return $this->EUROCountry;
+        return get_option($this::EURO_COUNTRIES);
     }
-
 
     public function setEUROCountries($countries=array()){
         update_option($this::EURO_COUNTRIES, $countries);
     }
 
     public function getGBPCountries(){
-//        return get_option($this::GBP_COUNTRIES);
-        return $this->GBPCountry;
+        return get_option($this::GBP_COUNTRIES);
     }
 
     public function setGBPCountries($countries=array()){
@@ -101,8 +97,7 @@ class CurrencyMapping{
     }
 
     public function getAUDCountries(){
-//        return get_option($this::AUD_COUNTRIES);
-        return $this->AUDCountry;
+        return get_option($this::AUD_COUNTRIES);
     }
 
     public function setAUDCountries($countries=array()){
@@ -110,8 +105,7 @@ class CurrencyMapping{
     }
 
     public function getCADCountries(){
-//        return get_option($this::CAD_COUNTRIES);
-        return $this->CADCountry;
+        return get_option($this::CAD_COUNTRIES);
     }
 
     public function setCADCountries($countries=array()){

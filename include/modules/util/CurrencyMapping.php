@@ -83,8 +83,8 @@ class CurrencyMapping{
 
     //getters and setters
     public function getUSDCountries(){
-//        return get_option($this::USD_COUNTRIES);
-        return explode(get_option($this::GROUP . $this::USD_GROUP), ",");
+        return get_option($this::USD_COUNTRIES);
+//        return explode(get_option($this::GROUP . $this::USD_GROUP), ",");
 
     }
 
@@ -93,8 +93,8 @@ class CurrencyMapping{
     }
 
     public function getEUROCountries(){
-//        return get_option($this::EURO_COUNTRIES);
-        return explode(get_option($this::GROUP . $this::EURO_GROUP), ",");
+        return get_option($this::EURO_COUNTRIES);
+//        return explode(get_option($this::GROUP . $this::EURO_GROUP), ",");
 //        echo get_option($this::GROUP . $this::EURO_GROUP);
     }
 
@@ -111,8 +111,8 @@ class CurrencyMapping{
     }
 
     public function getAUDCountries(){
-//        return get_option($this::AUD_COUNTRIES);
-        return explode(get_option($this::GROUP . $this::AUD_GROUP), ",");
+        return get_option($this::AUD_COUNTRIES);
+//        return explode(get_option($this::GROUP . $this::AUD_GROUP), ",");
 //        echo get_option($this::GROUP . $this::EURO_GROUP);
     }
 
@@ -121,8 +121,8 @@ class CurrencyMapping{
     }
 
     public function getCADCountries(){
-//        return get_option($this::CAD_COUNTRIES);
-        return explode(get_option($this::GROUP . $this::CAD_GROUP), ",");
+        return get_option($this::CAD_COUNTRIES);
+//        return explode(get_option($this::GROUP . $this::CAD_GROUP), ",");
 //        echo get_option($this::GROUP . $this::CAD_GROUP);
     }
 

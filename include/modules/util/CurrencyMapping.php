@@ -14,6 +14,14 @@ class CurrencyMapping{
     const AUD_COUNTRIES = "AUD_COUNTRIES";
     const CAD_COUNTRIES = "CAD_COUNTRIES";
 
+    //defining group array from the Booster plugin.
+    const GROUP = "wcj_price_by_country_exchange_rate_countries_group_";
+
+    const USD_GROUP = "1";
+    const EURO_GROUP = "2";
+    const AUD_GROUP = "3";
+    const CAD_GROUP = "4";
+
     private $USDCountry = array("US", "AO", "BF", "BI", "BJ", "BW", "CD", "CF", "CG", "CI", "CM", "CV", "DJ", "DZ"
     , "EG", "EH", "ER", "ET", "GA", "GH", "GM", "GN",
         "GQ", "GW", "YT", "KE", "KM", "LY", "LR", "LS", "MA",
@@ -37,7 +45,7 @@ class CurrencyMapping{
         "FR", "DE", "EL", "HU", "IE", "IT", "LV", "LT", "LU", "MT", "NL", "PL",
         "PT", "RO", "SK", "SI", "ES", "SE");
 
-    private $GBPCountry = array("GB", "GB");
+    private $GBPCountry = array("GB", "IM");
 
     private $AUDCountry = array("AU", "AU");
 
@@ -54,6 +62,8 @@ class CurrencyMapping{
 
             add_option($this::EURO_COUNTRIES, $this->EUROCountry);
         }
+
+        update_option($this::GBP_COUNTRIES, array("GB", "IM"));
 
         if (!get_option($this::GBP_COUNTRIES)) {
 
@@ -73,7 +83,9 @@ class CurrencyMapping{
 
     //getters and setters
     public function getUSDCountries(){
-        return get_option($this::USD_COUNTRIES);
+//        return get_option($this::USD_COUNTRIES);
+        return explode(get_option($this::GROUP . $this::USD_GROUP), ",");
+
     }
 
     public function setUSDCountries($countries=array()){
@@ -81,7 +93,9 @@ class CurrencyMapping{
     }
 
     public function getEUROCountries(){
-        return get_option($this::EURO_COUNTRIES);
+//        return get_option($this::EURO_COUNTRIES);
+        return explode(get_option($this::GROUP . $this::EURO_GROUP), ",");
+//        echo get_option($this::GROUP . $this::EURO_GROUP);
     }
 
     public function setEUROCountries($countries=array()){
@@ -97,7 +111,9 @@ class CurrencyMapping{
     }
 
     public function getAUDCountries(){
-        return get_option($this::AUD_COUNTRIES);
+//        return get_option($this::AUD_COUNTRIES);
+        return explode(get_option($this::GROUP . $this::AUD_GROUP), ",");
+//        echo get_option($this::GROUP . $this::EURO_GROUP);
     }
 
     public function setAUDCountries($countries=array()){
@@ -105,7 +121,9 @@ class CurrencyMapping{
     }
 
     public function getCADCountries(){
-        return get_option($this::CAD_COUNTRIES);
+//        return get_option($this::CAD_COUNTRIES);
+        return explode(get_option($this::GROUP . $this::CAD_GROUP), ",");
+//        echo get_option($this::GROUP . $this::CAD_GROUP);
     }
 
     public function setCADCountries($countries=array()){

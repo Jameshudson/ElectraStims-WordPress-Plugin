@@ -2,7 +2,11 @@
 /*
 Plugin Name:Do Not Deactivate
 Plugin URI: https://www.electrastim.com
+<<<<<<< HEAD
 Version: 1.8
+=======
+Version: 1.5
+>>>>>>> parent of 6f4b0b1... Added a remove method from Style handler
 Author: James Hudson
 */
 
@@ -27,7 +31,7 @@ new \modules\email_tax_statmant\EmailTaxStatment();
 //new \modules\rma\RMA();
 //new \modules\payment_tracker\PaymentTracker($menuTest);
 //new \modules\product_list\ProductsList($menuTest);
-new \modules\user_register\UserRegister();
+//new \modules\user_register\UserRegister();
 
 new \modules\util\ClientScriptsStyles();
 
